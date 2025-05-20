@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Odin Library</h1>
+            <div class="lib-function-contanter">
+                <button type="button" id="add-book" onclick="openBookForm()">Add Book</button>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <div class="book-list">
+            <div class="book-card-template">
+                <div class="book-info">
+                    <h2 id="card-title"></h2>
+                    <p id="card-author"></p>
+                    <p id="card-pages"></p>
+                    <p id="card-read"></p>
+                </div>
+                <div class="card-buttons">
+                    <button type="button" class="remove-book">Remove</button>
+                    <button type="button" class="toggle-read-status">Toggle Read Status</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="popup-form">
+            <form action="" class="form-container">
+                    <div class="form-header">
+                        <h2>Book Form</h2>
+                        <button type="button" id="close-form" onclick="closeBookForm()">X</button>
+                    </div>
+                <div class="form-body">
+                    <fieldset>
+                        <label for="title">Title</label>
+                        <input type="text" id="title" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="author">Author</label>
+                        <input type="text" id="author" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="pages">Pages</label>
+                        <input type="number" id="pages" required>
+                    </fieldset>
+                    <fieldset class="radio-fieldset">
+                        <label>Read Status</label>
+                            <div id="radio-container">
+                                <fieldset>
+                                    <label for="read">Read</label>
+                                    <input type="radio" id="read" value="true" name="read-status">
+                                </fieldset>
+                                <fieldset>
+                                    <label for="not-read">Not Read</label>
+                                    <input type="radio" id="not-read" value="false" name="read-status" checked>
+                                </fieldset>
+                            </div>
+                    </fieldset>
+                    <button type="button" id="form-submit-button">Submit Book</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>Odin Library</p>
+            <p>Created by umbraflos</p>
+        </div>
+    </footer>
+</body>
+</html>
