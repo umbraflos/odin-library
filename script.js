@@ -1,6 +1,7 @@
 function openBookForm () {document.querySelector("#popup-form").style.display  = "block";}
 function closeBookForm () {document.querySelector("#popup-form").style.display = "none";}
 
+
 let bookArray = [];
 
 function Book() {
