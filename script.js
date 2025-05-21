@@ -70,7 +70,7 @@ function toggleReadStatus(event) {
     updateLibraryDiplay();
 }
 
-//clone a invisible template then make it visible and fill in the book details and add event listeners
+//clone an invisible template then make it visible and fill in the book details and add event listeners
 function displayAbook (book) {
     const bookList = document.querySelector(".book-list");
     const bookTemplate = document.querySelector(".book-card-template");
