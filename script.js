@@ -4,6 +4,7 @@ function closeBookForm () {document.querySelector("#popup-form").style.display =
 
 let bookArray = [];
 
+/* Old factory function version
 function Book() {
     this.id = 0
     this.title = "";
@@ -11,14 +12,47 @@ function Book() {
     this.pages = 0;
     this.read = false;
 }
+*/
+
+class Book 
+    {
+        constructor (id,title,author,pages,read) 
+            {
+                this._id = id;
+                this._title = title;
+                this._author = author;
+                this._pages = pages;
+                this._read = read;
+            }
+        get id() {return this._id;}
+        get title() {return this._title;}
+        get author() {return this._author;}
+        get pages() {return this._pages;}
+        get read() {return this._read;}
+
+        set id(value) 
+            {
+                if (typeof value === "string" && value.length > 0) {this._id = value;}
+                else {console.error("An empty or a non-string was being pass into class Book");}
+            }
+        set title(value) {this._title = value;}
+        set author(value) {this._author = value;}
+        set pages(value) 
+        {
+            if (typeof value === "number" && value > 0) {this._pages = value;} 
+            else {console.error("Pages must be a positive number");}
+        }
+        set read(value) {
+            if (typeof value === "boolean") {
+                this._read = value;
+            } else {
+                console.error("Read status must be a boolean");
+            }
+        }
+    }
 
 function addBook2Array(title, author, pages, read) {
-    const book = new Book();
-    book.id = crypto.randomUUID();
-    book.title = title;
-    book.author = author;
-    book.pages = pages;
-    book.read = read;
+    const book = new Book(crypto.randomUUID(), title, author, pages, read);
     bookArray.push(book);
 }
 
